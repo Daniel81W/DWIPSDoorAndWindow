@@ -4,7 +4,8 @@
             "WindowState": "Fensterstatus",
             "closed": "geschlossen",
             "tilted": "gekippt",
-            "opened": "geöffnet"
+            "opened": "geöffnet",
+            "state": "Status"
         }
     }
 }
