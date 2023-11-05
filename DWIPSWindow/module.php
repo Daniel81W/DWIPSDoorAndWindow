@@ -27,7 +27,7 @@
             $instID = 0;
             //foreach ()
             echo $MessageList;
-            $this->SendDebug("Messages", var_dump($MessageList),0);
+            //$this->SendDebug("Messages", var_dump($MessageList),0);
 
 			$this->RegisterMessage($this->ReadPropertyInteger("WindowSensor1ID"),10603);
             $this->RegisterMessage($this->ReadPropertyInteger("WindowSensor2ID"),10603);
