@@ -6,10 +6,18 @@
 			//Never delete this line!
 			parent::Create();
 
+            if(!IPS_VariableProfileExists('DWIPS.'.$this->Translate('WindowState'))){
+                IPS_CreateVariableProfile('DWIPS.'.$this->Translate('WindowState'), 1);
+                IPS_SetVariableProfileValues('DWIPS.'.$this->Translate('WindowState'),0,2,1);
+                IPS_SetVariableProfileAssociation('DWIPS.'.$this->Translate("WindowState"),0, $this->Translate("closed"),"", -1);
+                IPS_SetVariableProfileAssociation('DWIPS.'.$this->Translate("WindowState"),1, $this->Translate("tilted"),"", -1);
+                IPS_SetVariableProfileAssociation('DWIPS.'.$this->Translate("WindowState"),2, $this->Translate("opened"),"", -1);
+            }
+
 			$this->RegisterPropertyInteger("WindowSensor1ID", 0);
             $this->RegisterPropertyInteger("WindowSensor2ID", 0);
 			
-
+            $this->RegisterVariableInteger('state', $this->Translate('state'), 'DWIPS.'.$this->Translate('WindowState'),1);
 		}
 
 		public function Destroy()
