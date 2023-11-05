@@ -1,0 +1,12 @@
+{
+    "translations": {
+        "de": {
+            "WindowState": "Fensterstatus",
+            "closed": "geschlossen",
+            "tilted": "gekippt",
+            "opened": "geöffnet",
+            "state": "Status",
+            "count": "Anzahl"
+        }
+    }
+}

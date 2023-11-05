@@ -1,0 +1,12 @@
+{
+    "id": "{FA667129-D2A1-FF51-BD31-8D042F9EC8E0}",
+    "name": "DWIPSWindowControl",
+    "type": 0,
+    "vendor": "DWIPS",
+    "aliases": [],
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "DWIPSWINDOWCONTROL",
+    "url": "https://github.com/Daniel81W/DWIPSDoorAndWindow"
+}
