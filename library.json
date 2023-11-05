@@ -1,0 +1,12 @@
+{
+    "id": "{724B5DFF-7C53-5A88-E29D-7A1EEF84166D}",
+    "name": "DWIPSDoorAndWindow",
+    "author": "Daniel Weber",
+    "url": "https://github.com/Daniel81W/DWIPSDoorAndWindow.git",
+    "compatibility": {
+        "version": "6.2"
+    },
+    "version": "0.1",
+    "build": 0,
+    "date": 1699200605
+}

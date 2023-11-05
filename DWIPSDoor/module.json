@@ -1,0 +1,12 @@
+{
+    "id": "{EA13BD72-58D8-28CB-BD8D-B2987C4FBDEC}",
+    "name": "DWIPSDoor",
+    "type": 3,
+    "vendor": "DWIPS",
+    "aliases": [],
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "DWIPSDOOR",
+    "url": "https://github.com/Daniel81W/DWIPSDoorAndWindow"
+}
