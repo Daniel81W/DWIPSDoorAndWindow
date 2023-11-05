@@ -4,18 +4,6 @@
             "type": "ExpansionPanel",
             "caption": "Sensoreinstellungen",
             "items": [
-                {
-                    "type": "SelectVariable",
-                    "name": "WindowSensor1ID",
-                    "caption": "Sensor 1",
-                    "validVariableTypes": [0]
-                },
-                {
-                    "type": "SelectVariable",
-                    "name": "WindowSensor2ID",
-                    "caption": "Sensor 2",
-                    "validVariableTypes": [0]
-                }
             ]
         },
         {
