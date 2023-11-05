@@ -25,6 +25,7 @@
             $MessageList = $this->GetMessageList();
             foreach($MessageList as $instID => $messages){
                 foreach ($messages as $message){
+                    echo $instID . " - " . $message;
                     $this->UnregisterMessage($instID, $message);
                 }
             }
