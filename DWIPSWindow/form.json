@@ -2,23 +2,19 @@
     "elements": [
         {
             "type": "ExpansionPanel",
-            "caption": "Speicherdaten",
+            "caption": "Sensorvariablen",
             "items": [
                 {
-                    "type": "NumberSpinner",
-                    "name": "GenCount",
-                    "caption": "Anzahl Generatoren",
-                    "minimum": 1,
-                    "suffix": "",
-                    "digits": 0
+                    "type": "SelectVariable",
+                    "name": "WindowSensor1ID",
+                    "caption": "Sensor 1",
+                    "validVariableTypes": 0
                 },
                 {
-                    "type": "NumberSpinner",
-                    "name": "MaxGeneratorPower",
-                    "caption": "Nennleistung pro Generator",
-                    "minimum": 0,
-                    "suffix": "kW",
-                    "digits": 1
+                    "type": "SelectVariable",
+                    "name": "WindowSensor2ID",
+                    "caption": "Sensor 2",
+                    "validVariableTypes": 0
                 }
             ]
         },
