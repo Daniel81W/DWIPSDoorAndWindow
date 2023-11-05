@@ -1,5 +1,4 @@
 <?php
-	//include_once("/var/lib/symcon/modules/DWIPSLib/libs/astro.php");
 	class DWIPSWindow extends IPSModule {
 
 		public function Create()
@@ -24,8 +23,11 @@
 			//Never delete this line!
 			parent::ApplyChanges();
             $MessageList = $this->GetMessageList();
-            $instID = 0;
-            //foreach ()
+            foreach($MessageList as $instID => $messages){
+                foreach ($messages as $message){
+                    $this->UnregisterMessage($instID, $message);
+                }
+            }
             var_dump($MessageList);
             //$this->SendDebug("Messages", var_dump($MessageList),0);
 

@@ -1,6 +1,5 @@
 <?php
-	//include_once("/var/lib/symcon/modules/DWIPSLib/libs/astro.php");
-	class DWIPSSkyWindGen extends IPSModule {
+	class DWIPSDoor extends IPSModule {
 
 		public function Create()
 		{
