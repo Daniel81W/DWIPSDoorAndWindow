@@ -22,16 +22,25 @@
 		{
 			//Never delete this line!
 			parent::ApplyChanges();
-            /*$MessageList = $this->GetMessageList();
+            $MessageList = $this->GetMessageList();
             foreach($MessageList as $instID => $messages){
                 foreach ($messages as $message){
                     echo $instID . " - " . $message;
                     $this->UnregisterMessage($instID, $message);
                 }
-            }*/
+            }
 
 			$this->RegisterMessage($this->ReadPropertyInteger("WindowSensor1ID"),10603);
             $this->RegisterMessage($this->ReadPropertyInteger("WindowSensor2ID"),10603);
+
+
+            $MessageList = $this->GetMessageList();
+            foreach($MessageList as $instID => $messages){
+                foreach ($messages as $message){
+                    echo $instID . " - " . $message;
+                    $this->UnregisterMessage($instID, $message);
+                }
+            }
 		}
 
 		/**
