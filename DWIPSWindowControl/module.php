@@ -1,5 +1,5 @@
 <?php
-	class DWIPSWindow extends IPSModule {
+	class DWIPSWindowControl extends IPSModule {
 
 		public function Create()
 		{
