@@ -138,6 +138,10 @@
                 DWIPSWINDOWCONTROL_updateStates($controlInstID);
             }
         }
+
+        public function GetState(){
+            return $this->GetValue('state');
+        }
 		
     }
 ?>

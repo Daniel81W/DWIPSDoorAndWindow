@@ -74,7 +74,7 @@
             $windows = IPS_GetInstanceListByModuleID($this->getWindowGUID());
             $openCount = 0;
             for($i = 0; $i < count($windows);$i++){
-                if(GetValueInteger($windows[$i]) > 0){
+                if(DWIPSWINDOW_GetState($windows[$i]) > 0){
                     $openCount += 1;
                 }
             }
