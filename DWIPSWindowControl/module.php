@@ -1,11 +1,15 @@
 <?php /** @noinspection PhpRedundantClosingTagInspection */
 
-class DWIPSWindowControl extends IPSModule {
+    class DWIPSWindowControl extends IPSModule {
+
+        /** @noinspection SpellCheckingInspection */
+        private string $windowguid;
 
 		public function Create()
 		{
 			//Never delete this line!
 			parent::Create();
+            $this->windowguid = "{D6FB6A9C-7085-0ABC-8700-D41390B35F41}";
 
             /** @noinspection PhpExpressionResultUnusedInspection */
             $this->RegisterPropertyString("windows", '');
@@ -33,9 +37,8 @@ class DWIPSWindowControl extends IPSModule {
             $arr = json_decode($arrString);
             $this->SendDebug( "Liste", "".$arr[0], 0);*/
 
-            /** @noinspection SpellCheckingInspection */
-            $windowguid = "{D6FB6A9C-7085-0ABC-8700-D41390B35F41}";
-            $windows = IPS_GetInstanceListByModuleID($windowguid);
+
+            $windows = IPS_GetInstanceListByModuleID($this->windowguid);
             $this->SendDebug( "Liste", "".count($windows), 0);
 		}
 
@@ -56,6 +59,11 @@ class DWIPSWindowControl extends IPSModule {
 			//IPS_LogMessage("MessageSink", "Message from SenderID ".$SenderID." with Message ".$Message."\r\n Data: ".print_r($Data, true));
 			
 		}
+
+        public function updateInstanceList(){
+            $windows = IPS_GetInstanceListByModuleID($this->windowguid);
+            $this->SendDebug( "Liste", "".count($windows), 0);
+        }
 		
 	}
 	?>

@@ -71,6 +71,11 @@
             $this->RegisterMessage($this->ReadPropertyInteger("WindowSensor2ID"),10603);
 
             $this->setState();
+
+            $controlInstID = IPS_GetInstanceListByModuleID("{FA667129-D2A1-FF51-BD31-8D042F9EC8E0}")[0];
+            if(isset($controlInstID)){
+                DWIPSWINDOWCONTROL_updateInstanceList($controlInstID);
+            }
 		}
 
 		/**
