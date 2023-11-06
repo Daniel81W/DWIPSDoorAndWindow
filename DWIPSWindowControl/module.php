@@ -18,6 +18,10 @@
 
             /** @noinspection PhpExpressionResultUnusedInspection */
             $this->RegisterVariableInteger('count', $this->Translate('count'), '',1);
+
+            /** @noinspection PhpExpressionResultUnusedInspection */
+            /** @noinspection SpellCheckingInspection */
+            $this->RegisterVariableInteger('OpenCount', $this->Translate('opened'), '',1);
 		}
 
 
@@ -64,6 +68,19 @@
             $windows = IPS_GetInstanceListByModuleID($this->getWindowGUID());
             /** @noinspection PhpExpressionResultUnusedInspection */
             $this->SetValue('count', count($windows));
+        }
+
+        public function updateStates(){
+            $windows = IPS_GetInstanceListByModuleID($this->getWindowGUID());
+            $openCount = 0;
+            for($i = 0; $i < count($windows);$i++){
+                if(GetValueInteger($windows[$i]) > 0){
+                    $openCount += 1;
+                }
+            }
+            /** @noinspection PhpExpressionResultUnusedInspection */
+            $this->SetValue('OpenCount', $openCount);
+
         }
 		
 	}
