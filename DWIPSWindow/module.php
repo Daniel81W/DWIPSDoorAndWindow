@@ -88,7 +88,9 @@
 		public function MessageSink($TimeStamp, $SenderID, $Message, $Data) {
 	
 			//IPS_LogMessage("MessageSink", "Message from SenderID ".$SenderID." with Message ".$Message."\r\n Data: ".print_r($Data, true));
-			
+			if ($SenderID == $this->ReadPropertyInteger("WindowSensor1ID") or $SenderID == $this->ReadPropertyInteger("WindowSensor2ID")){
+                $this->setState();
+            }
 		}
 
         public function setState(){
