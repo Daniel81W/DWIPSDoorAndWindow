@@ -92,7 +92,7 @@
 		}
 
         public function setState(){
-            $sens1 = $this->GetValue($this->ReadPropertyInteger("WindowSensor1ID"));
+            $sens1 = GetValueBoolean($this->ReadPropertyInteger("WindowSensor1ID"));
         }
 		
     }
