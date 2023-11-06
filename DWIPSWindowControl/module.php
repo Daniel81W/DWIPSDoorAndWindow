@@ -1,15 +1,21 @@
-<?php
-	class DWIPSWindowControl extends IPSModule {
+<?php /** @noinspection PhpRedundantClosingTagInspection */
+
+class DWIPSWindowControl extends IPSModule {
 
 		public function Create()
 		{
 			//Never delete this line!
 			parent::Create();
-			
+
+            /** @noinspection PhpExpressionResultUnusedInspection */
             $this->RegisterVariableInteger('count', $this->Translate('count'), '',1);
 		}
 
-		public function Destroy()
+
+        /**
+         * @return void
+         */
+        public function Destroy()
 		{
 			//Never delete this line!
 			parent::Destroy();
@@ -22,12 +28,12 @@
 
             $arrString = $this->ReadPropertyString("windows");
             $arr = json_decode($arrString);
-            vardump($arr);
+            var_dump($arr);
 		}
 
 		/**
         * Die folgenden Funktionen stehen automatisch zur Verfügung, wenn das Modul über die "Module Control" eingefügt wurden.
-        * Die Funktionen werden, mit dem selbst eingerichteten Prefix, in PHP und JSON-RPC wiefolgt zur Verfügung gestellt:
+        * Die Funktionen werden, mit dem selbst eingerichteten Prefix, in PHP und JSON-RPC wie folgt zur Verfügung gestellt:
         *
         * DWIPSShutter_UpdateSunrise($id);
         *
