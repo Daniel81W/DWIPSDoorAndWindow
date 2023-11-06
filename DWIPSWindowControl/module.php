@@ -33,9 +33,10 @@ class DWIPSWindowControl extends IPSModule {
             $arr = json_decode($arrString);
             $this->SendDebug( "Liste", "".$arr[0], 0);*/
 
+            /** @noinspection SpellCheckingInspection */
             $windowguid = "{D6FB6A9C-7085-0ABC-8700-D41390B35F41}";
             $windows = IPS_GetInstanceListByModuleID($windowguid);
-            $this->SendDebug( "Liste", "".$windows, 0);
+            $this->SendDebug( "Liste", "".count($windows), 0);
 		}
 
 		/**
