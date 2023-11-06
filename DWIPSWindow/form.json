@@ -4,6 +4,25 @@
             "type": "ExpansionPanel",
             "caption": "Sensoreinstellungen",
             "items": [
+                {
+                    "type": "RowLayout",
+                    "items": [
+                        {
+                            "type": "Label",
+                            "caption": "Test"
+                        },
+                        {
+                            "type": "CheckBox",
+                            "caption": "Sensor 1",
+                            "name": "ClosedStateWindowSensor1"
+                        },
+                        {
+                            "type": "CheckBox",
+                            "caption": "Sensor 2",
+                            "name": "ClosedStateWindowSensor2"
+                        }
+                    ]
+                }
             ]
         },
         {
