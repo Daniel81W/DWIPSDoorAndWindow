@@ -9,7 +9,7 @@
                     "items": [
                         {
                             "type": "Label",
-                            "caption": "geschlossen"
+                            "caption": "geschlossen:   "
                         },
                         {
                             "type": "CheckBox",
@@ -28,7 +28,7 @@
                     "items": [
                         {
                             "type": "Label",
-                            "caption": "gekippt"
+                            "caption": "gekippt:       "
                         },
                         {
                             "type": "CheckBox",
@@ -47,7 +47,7 @@
                     "items": [
                         {
                             "type": "Label",
-                            "caption": "geöffnet"
+                            "caption": "geöffnet:      "
                         },
                         {
                             "type": "CheckBox",
