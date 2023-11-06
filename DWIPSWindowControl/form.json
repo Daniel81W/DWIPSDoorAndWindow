@@ -8,19 +8,22 @@
         },
         {
             "type": "ExpansionPanel",
-            "caption": "Sensorvariablen",
+            "caption": "Fenster",
             "items": [
                 {
-                    "type": "SelectVariable",
-                    "name": "WindowSensor1ID",
-                    "caption": "Sensor 1",
-                    "validVariableTypes": [0]
-                },
-                {
-                    "type": "SelectVariable",
-                    "name": "WindowSensor2ID",
-                    "caption": "Sensor 2",
-                    "validVariableTypes": [0]
+                    "type": "List",
+                    "name": "windows",
+                    "caption": "Fenster",
+                    "columns": [
+                        {
+                            "caption": "Name",
+                            "width": "150px"
+                        },
+                        {
+                            "caption": "InstanceID",
+                            "width": "150px"
+                        }
+                    ]
                 }
             ]
         }

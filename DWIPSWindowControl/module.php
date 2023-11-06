@@ -20,8 +20,9 @@
 			//Never delete this line!
 			parent::ApplyChanges();
 
-
-
+            $arrString = $this->ReadPropertyString("windows");
+            $arr = json_decode($arrString);
+            vardump($arr);
 		}
 
 		/**
