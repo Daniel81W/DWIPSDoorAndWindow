@@ -2,14 +2,14 @@
 
     class DWIPSWindowControl extends IPSModule {
 
-        /** @noinspection SpellCheckingInspection */
-        private string $windowguid;
+        private function getWindowGUID() : string{
+            return "{D6FB6A9C-7085-0ABC-8700-D41390B35F41}";
+        }
 
 		public function Create()
 		{
 			//Never delete this line!
 			parent::Create();
-            $this->windowguid = "{D6FB6A9C-7085-0ABC-8700-D41390B35F41}";
 
             /** @noinspection PhpExpressionResultUnusedInspection */
             $this->RegisterPropertyString("windows", '');
@@ -38,7 +38,7 @@
             $this->SendDebug( "Liste", "".$arr[0], 0);*/
 
 
-            $windows = IPS_GetInstanceListByModuleID($this->windowguid);
+            $windows = IPS_GetInstanceListByModuleID($this->getWindowGUID());
             $this->SendDebug( "Liste", "".count($windows), 0);
 		}
 
@@ -61,7 +61,7 @@
 		}
 
         public function updateInstanceList(){
-            $windows = IPS_GetInstanceListByModuleID($this->windowguid);
+            $windows = IPS_GetInstanceListByModuleID($this->getWindowGUID());
             $this->SendDebug( "Liste", "".count($windows), 0);
         }
 		
