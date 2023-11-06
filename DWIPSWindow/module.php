@@ -93,6 +93,22 @@
 
         public function setState(){
             $sens1 = GetValueBoolean($this->ReadPropertyInteger("WindowSensor1ID"));
+            $sens2 = GetValueBoolean($this->ReadPropertyInteger("WindowSensor2ID"));
+
+            if( $sens1 == $this->RegisterPropertyBoolean("ClosedStateWindowSensor1")){
+                if( $sens2 == $this->RegisterPropertyBoolean("ClosedStateWindowSensor2")){
+                    $this->SetValue("state", 0);
+                }
+            }
+            if ( $sens1 == $this->RegisterPropertyBoolean("TiltedStateWindowSensor1")){
+                if ( $sens2 == $this->RegisterPropertyBoolean("TiltedStateWindowSensor2")){
+                    $this->SetValue("state", 1);
+                }
+            }if ( $sens1 == $this->RegisterPropertyBoolean("OpenedStateWindowSensor1")){
+                if ( $sens2 == $this->RegisterPropertyBoolean("OpenedStateWindowSensor2")){
+                    $this->SetValue("state", 2);
+                }
+            }
         }
 		
     }
