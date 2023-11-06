@@ -9,7 +9,7 @@
                     "items": [
                         {
                             "type": "Label",
-                            "caption": "Test"
+                            "caption": "geschlossen"
                         },
                         {
                             "type": "CheckBox",
@@ -20,6 +20,44 @@
                             "type": "CheckBox",
                             "caption": "Sensor 2",
                             "name": "ClosedStateWindowSensor2"
+                        }
+                    ]
+                },
+                {
+                    "type": "RowLayout",
+                    "items": [
+                        {
+                            "type": "Label",
+                            "caption": "gekippt"
+                        },
+                        {
+                            "type": "CheckBox",
+                            "caption": "Sensor 1",
+                            "name": "TiltedStateWindowSensor1"
+                        },
+                        {
+                            "type": "CheckBox",
+                            "caption": "Sensor 2",
+                            "name": "TiltedStateWindowSensor2"
+                        }
+                    ]
+                },
+                {
+                    "type": "RowLayout",
+                    "items": [
+                        {
+                            "type": "Label",
+                            "caption": "geöffnet"
+                        },
+                        {
+                            "type": "CheckBox",
+                            "caption": "Sensor 1",
+                            "name": "OpenedStateWindowSensor1"
+                        },
+                        {
+                            "type": "CheckBox",
+                            "caption": "Sensor 2",
+                            "name": "OpenedStateWindowSensor2"
                         }
                     ]
                 }
