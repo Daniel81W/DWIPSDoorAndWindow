@@ -31,7 +31,7 @@ class DWIPSWindowControl extends IPSModule {
 
             $arrString = $this->ReadPropertyString("windows");
             $arr = json_decode($arrString);
-            $this->SendDebug(count($arr));
+            $this->SendDebug( "Liste", "".count($arr), 0);
 		}
 
 		/**
