@@ -95,17 +95,20 @@
             $sens1 = GetValueBoolean($this->ReadPropertyInteger("WindowSensor1ID"));
             $sens2 = GetValueBoolean($this->ReadPropertyInteger("WindowSensor2ID"));
 
-            if( $sens1 == $this->RegisterPropertyBoolean("ClosedStateWindowSensor1")){
-                if( $sens2 == $this->RegisterPropertyBoolean("ClosedStateWindowSensor2")){
+            if( $sens1 == $this->ReadPropertyBoolean("ClosedStateWindowSensor1")){
+                if( $sens2 == $this->ReadPropertyBoolean("ClosedStateWindowSensor2")){
+                    /** @noinspection PhpExpressionResultUnusedInspection */
                     $this->SetValue("state", 0);
                 }
             }
-            if ( $sens1 == $this->RegisterPropertyBoolean("TiltedStateWindowSensor1")){
-                if ( $sens2 == $this->RegisterPropertyBoolean("TiltedStateWindowSensor2")){
+            if ( $sens1 == $this->ReadPropertyBoolean("TiltedStateWindowSensor1")){
+                if ( $sens2 == $this->ReadPropertyBoolean("TiltedStateWindowSensor2")){
+                    /** @noinspection PhpExpressionResultUnusedInspection */
                     $this->SetValue("state", 1);
                 }
-            }if ( $sens1 == $this->RegisterPropertyBoolean("OpenedStateWindowSensor1")){
-                if ( $sens2 == $this->RegisterPropertyBoolean("OpenedStateWindowSensor2")){
+            }if ( $sens1 == $this->ReadPropertyBoolean("OpenedStateWindowSensor1")){
+                if ( $sens2 == $this->ReadPropertyBoolean("OpenedStateWindowSensor2")){
+                    /** @noinspection PhpExpressionResultUnusedInspection */
                     $this->SetValue("state", 2);
                 }
             }
