@@ -1,4 +1,6 @@
-<?php /** @noinspection PhpRedundantClosingTagInspection */
+<?php
+    /** @noinspection PhpUnused */
+    /** @noinspection PhpRedundantClosingTagInspection */
 
     class DWIPSWindowControl extends IPSModule {
 
@@ -28,7 +30,8 @@
 			parent::Destroy();
 		}
 
-		public function ApplyChanges()
+        /** @noinspection PhpRedundantMethodOverrideInspection */
+        public function ApplyChanges()
 		{
 			//Never delete this line!
 			parent::ApplyChanges();
@@ -37,9 +40,6 @@
             $arr = json_decode($arrString);
             $this->SendDebug( "Liste", "".$arr[0], 0);*/
 
-
-            $windows = IPS_GetInstanceListByModuleID($this->getWindowGUID());
-            $this->SendDebug( "Liste", "".count($windows), 0);
 		}
 
 		/**
@@ -62,7 +62,7 @@
 
         public function updateInstanceList(){
             $windows = IPS_GetInstanceListByModuleID($this->getWindowGUID());
-            $this->SendDebug( "Liste", "".count($windows), 0);
+            /** @noinspection PhpExpressionResultUnusedInspection */
             $this->SetValue('count', count($windows));
         }
 		

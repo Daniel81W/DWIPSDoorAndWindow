@@ -1,4 +1,5 @@
-<?php /** @noinspection PhpUnused */
+<?php
+    /** @noinspection PhpUnused */
     /** @noinspection PhpRedundantClosingTagInspection */
 
     class DWIPSWindow extends IPSModule {
