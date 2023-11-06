@@ -63,6 +63,7 @@
         public function updateInstanceList(){
             $windows = IPS_GetInstanceListByModuleID($this->getWindowGUID());
             $this->SendDebug( "Liste", "".count($windows), 0);
+            $this->SetValue('count', count($windows));
         }
 		
 	}
