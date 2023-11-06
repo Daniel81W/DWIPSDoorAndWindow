@@ -14,14 +14,17 @@
                     "type": "List",
                     "name": "windows",
                     "caption": "Fenster",
+                    "add": "true",
                     "columns": [
                         {
                             "caption": "Name",
-                            "width": "150px"
+                            "width": "150px",
+                            "add": ""
                         },
                         {
                             "caption": "InstanceID",
-                            "width": "150px"
+                            "width": "150px",
+                            "add": ""
                         }
                     ]
                 }

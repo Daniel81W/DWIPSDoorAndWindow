@@ -29,9 +29,9 @@ class DWIPSWindowControl extends IPSModule {
 			//Never delete this line!
 			parent::ApplyChanges();
 
-            $arrString = $this->ReadPropertyString("windows");
-            $arr = json_decode($arrString);
-            var_dump($arr);
+            //$arrString = $this->ReadPropertyString("windows");
+            //$arr = json_decode($arrString);
+            //echo $arr[0];
 		}
 
 		/**
