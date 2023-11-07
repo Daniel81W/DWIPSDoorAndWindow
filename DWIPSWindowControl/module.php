@@ -81,6 +81,7 @@
             /** @noinspection PhpExpressionResultUnusedInspection */
             $this->SetValue('OpenCount', $openCount);
 
+
         }
 		
 	}
