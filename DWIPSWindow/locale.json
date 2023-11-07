@@ -2,6 +2,8 @@
     "translations": {
         "de": {
             "WindowState": "Fensterstatus",
+            "locked": "verriegelt",
+            "unlocked": "entriegelt",
             "closed": "geschlossen",
             "tilted": "gekippt",
             "opened": "geöffnet",

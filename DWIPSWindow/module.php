@@ -1,4 +1,5 @@
 <?php
+    /** @noinspection PhpExpressionResultUnusedInspection */
     /** @noinspection PhpUnused */
     /** @noinspection PhpRedundantClosingTagInspection */
 
@@ -9,53 +10,53 @@
 			//Never delete this line!
 			parent::Create();
 
-            /** @noinspection PhpExpressionResultUnusedInspection */
-            //Property with number of window sashes
+            /** Properties for data storage*/
+            //Property with instance id
             $this->RegisterPropertyInteger("InstID", 0);
-            $this->IPS_SetProperty($this->InstanceID, "InstID", $this->InstanceID);
-
-            if(!IPS_VariableProfileExists('DWIPS.'.$this->Translate('WindowState'))){
-                /** @noinspection PhpExpressionResultUnusedInspection */
-                IPS_CreateVariableProfile('DWIPS.'.$this->Translate('WindowState'), 1);
-                /** @noinspection PhpExpressionResultUnusedInspection */
-                IPS_SetVariableProfileValues('DWIPS.'.$this->Translate('WindowState'),0,2,1);
-                /** @noinspection PhpExpressionResultUnusedInspection */
-                IPS_SetVariableProfileAssociation('DWIPS.'.$this->Translate("WindowState"),0, $this->Translate("closed"),"", -1);
-                /** @noinspection PhpExpressionResultUnusedInspection */
-                IPS_SetVariableProfileAssociation('DWIPS.'.$this->Translate("WindowState"),1, $this->Translate("tilted"),"", -1);
-                /** @noinspection PhpExpressionResultUnusedInspection */
-                IPS_SetVariableProfileAssociation('DWIPS.'.$this->Translate("WindowState"),2, $this->Translate("opened"),"", -1);
-            }
-            /** @noinspection PhpExpressionResultUnusedInspection */
             //Property with number of window sashes
             $this->RegisterPropertyInteger("SashesCount", 0);
-
-            /** @noinspection PhpExpressionResultUnusedInspection */
+            //
             $this->RegisterPropertyInteger("WindowSensor1ID", 0);
-            /** @noinspection PhpExpressionResultUnusedInspection */
+            //
             $this->RegisterPropertyInteger("WindowSensor2ID", 0);
-
-            /** @noinspection PhpExpressionResultUnusedInspection */
+            //
             $this->RegisterPropertyBoolean("ClosedStateWindowSensor1", 0);
-            /** @noinspection PhpExpressionResultUnusedInspection */
+            //
             $this->RegisterPropertyBoolean("ClosedStateWindowSensor2", 0);
-            /** @noinspection PhpExpressionResultUnusedInspection */
+            //
             $this->RegisterPropertyBoolean("TiltedStateWindowSensor1", 0);
-            /** @noinspection PhpExpressionResultUnusedInspection */
+            //
             $this->RegisterPropertyBoolean("TiltedStateWindowSensor2", 0);
-            /** @noinspection PhpExpressionResultUnusedInspection */
+            //
             $this->RegisterPropertyBoolean("OpenedStateWindowSensor1", 0);
-            /** @noinspection PhpExpressionResultUnusedInspection */
+            //
             $this->RegisterPropertyBoolean("OpenedStateWindowSensor2", 0);
 
-            /** @noinspection PhpExpressionResultUnusedInspection */
+
+            /**Create or update VariableProfiles*/
+            if (!IPS_VariableProfileExists('DWIPS.' . $this->Translate('WindowState'))) {
+                IPS_CreateVariableProfile('DWIPS.' . $this->Translate('WindowState'), 1);
+            }
+            else{
+                IPS_SetVariableProfileValues('DWIPS.' . $this->Translate('WindowState'), 0, 3, 1);
+                IPS_SetVariableProfileAssociation('DWIPS.' . $this->Translate("WindowState"), 0, $this->Translate("locked"), "", -1);
+                IPS_SetVariableProfileAssociation('DWIPS.' . $this->Translate("WindowState"), 1, $this->Translate("unlocked") . ", " . $this->Translate("closed"), "", -1);
+                IPS_SetVariableProfileAssociation('DWIPS.' . $this->Translate("WindowState"), 2, $this->Translate("tilted"), "", -1);
+                IPS_SetVariableProfileAssociation('DWIPS.' . $this->Translate("WindowState"), 3, $this->Translate("opened"), "", -1);
+            }
+
+
+            /** Create variables */
             $this->RegisterVariableInteger('state', $this->Translate('state'), 'DWIPS.'.$this->Translate('WindowState'),1);
+
+
+            /** @noinspection PhpUndefinedMethodInspection */
+            $this->IPS_SetProperty($this->InstanceID, "InstID", $this->InstanceID);
 		}
 
 		/**
         * @return void
         */
-        /** @noinspection PhpExpressionResultUnusedInspection */
         public function Destroy()
 		{
 			//Never delete this line!
