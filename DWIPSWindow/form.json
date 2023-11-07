@@ -11,7 +11,8 @@
                     "minimum": 1,
                     "maximum": 2,
                     "name": "SashesCount",
-                    "value": 1
+                    "value": 1,
+                    "onChange": "Echo \"Test\""
                 },
                 {
                     "type": "Select",
