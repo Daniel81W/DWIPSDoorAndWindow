@@ -3,6 +3,7 @@
         {
             "type": "ExpansionPanel",
             "caption": "Fenstereigenschaften",
+            "expanded": true,
             "items": [
                 {
                     "type": "NumberSpinner",
