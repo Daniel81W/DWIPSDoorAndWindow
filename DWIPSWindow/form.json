@@ -6,12 +6,19 @@
             "expanded": true,
             "items": [
                 {
-                    "type": "NumberSpinner",
+                    "type": "Select",
                     "caption": "Anzahl der Flügel",
-                    "minimum": 1,
-                    "maximum": 2,
                     "name": "SashesCount",
-                    "value": 1,
+                    "options": [
+                        {
+                            "caption": "1",
+                            "value": 1
+                        },
+                        {
+                            "caption": "2",
+                            "value": 2
+                        }
+                    ],
                     "onChange": "Echo \"Test\""
                 },
                 {
