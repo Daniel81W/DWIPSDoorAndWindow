@@ -54,7 +54,7 @@
                         {
                             "type": "Label",
                             "caption": "verriegelt:",
-                            "width": "250px"
+                            "width": "200px"
                         },
                         {
                             "type": "CheckBox",
@@ -94,7 +94,7 @@
                         {
                             "type": "Label",
                             "caption": "geschlossen:",
-                            "width": "250px"
+                            "width": "200px"
                         },
                         {
                             "type": "CheckBox",
@@ -133,7 +133,8 @@
                     "items": [
                         {
                             "type": "Label",
-                            "caption": "gekippt:       "
+                            "caption": "gekippt:",
+                            "width": "200px"
                         },
                         {
                             "type": "CheckBox",
@@ -172,7 +173,8 @@
                     "items": [
                         {
                             "type": "Label",
-                            "caption": "geöffnet:      "
+                            "caption": "geöffnet:",
+                            "width": "200px"
                         },
                         {
                             "type": "CheckBox",
