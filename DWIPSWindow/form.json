@@ -11,6 +11,24 @@
                     "maximum": 2,
                     "name": "SashesCount",
                     "value": 1
+                },
+                {
+                    "type": "Select",
+                    "caption": "Griffe",
+                    "options": [
+                        {
+                            "caption": "links",
+                            "value": 0
+                        },
+                        {
+                            "caption": "rechts",
+                            "value": 1
+                        },
+                        {
+                            "caption": "beidseitig",
+                            "value": 2
+                        }
+                    ]
                 }
             ]
         },{
