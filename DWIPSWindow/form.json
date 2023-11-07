@@ -22,7 +22,7 @@
                     "onChange": [
                         "$handlearr1 = '[{\"caption\": \"links\",\"value\": 0},{\"caption\": \"rechts\",\"value\": 1}]';",
                         "$handlearr2 = '[{\"caption\": \"links\",\"value\": 0},{\"caption\": \"rechts\",\"value\": 1},{\"caption\": \"beidseitig\",\"value\": 2}]';",
-                        "$this->UpdateFormField('HandleSide', 'options', $handlearr1);"
+                        "UpdateFormField('HandleSide', 'options', $handlearr1);"
                         ]
                 },
                 {
