@@ -9,6 +9,11 @@
 			//Never delete this line!
 			parent::Create();
 
+            /** @noinspection PhpExpressionResultUnusedInspection */
+            //Property with number of window sashes
+            $this->RegisterPropertyInteger("InstID", 0);
+            $this->IPS_SetProperty($this->InstanceID, "InstID", $this->InstanceID);
+
             if(!IPS_VariableProfileExists('DWIPS.'.$this->Translate('WindowState'))){
                 /** @noinspection PhpExpressionResultUnusedInspection */
                 IPS_CreateVariableProfile('DWIPS.'.$this->Translate('WindowState'), 1);

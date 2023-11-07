@@ -1,6 +1,10 @@
 {
     "elements": [
         {
+            "type": "NumberSpinner",
+            "name": "InstanceID"
+        },
+        {
             "type": "ExpansionPanel",
             "caption": "Sensoreinstellungen",
             "items": [
