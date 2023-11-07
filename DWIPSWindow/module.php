@@ -21,6 +21,9 @@
                 /** @noinspection PhpExpressionResultUnusedInspection */
                 IPS_SetVariableProfileAssociation('DWIPS.'.$this->Translate("WindowState"),2, $this->Translate("opened"),"", -1);
             }
+            /** @noinspection PhpExpressionResultUnusedInspection */
+            //Property with number of window sashes
+            $this->RegisterPropertyInteger("SashesCount", 0);
 
             /** @noinspection PhpExpressionResultUnusedInspection */
             $this->RegisterPropertyInteger("WindowSensor1ID", 0);

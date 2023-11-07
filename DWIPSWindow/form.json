@@ -2,6 +2,18 @@
     "elements": [
         {
             "type": "ExpansionPanel",
+            "caption": "Fenstereigenschaften",
+            "items": [
+                {
+                    "type": "NumberSpinner",
+                    "caption": "Anzahl der Flügel",
+                    "minimum": 1,
+                    "maximum": 2,
+                    "name": "SashesCount"
+                }
+            ]
+        },{
+            "type": "ExpansionPanel",
             "caption": "Sensoreinstellungen",
             "items": [
                 {
