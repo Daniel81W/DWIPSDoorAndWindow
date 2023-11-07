@@ -73,7 +73,7 @@
 			parent::ApplyChanges();
 
             /** @noinspection PhpUndefinedMethodInspection */
-            $this->IPS_SetProperty($this->InstanceID, "InstID", $this->InstanceID);
+            IPS_SetProperty($this->InstanceID, "InstID", $this->InstanceID);
 
             $MessageList = $this->GetMessageList();
             foreach($MessageList as $instID => $messages){
