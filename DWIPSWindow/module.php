@@ -77,6 +77,9 @@
             /** @noinspection PhpExpressionResultUnusedInspection */
             $this->RegisterMessage($this->ReadPropertyInteger("WindowSensor2ID"),10603);
 
+            $this->SendDebug("Form Sensor 1", $this->ReadPropertyInteger("WindowSensor1ID"), 0);
+            $this->SendDebug("Form Sensor 2", $this->ReadPropertyInteger("WindowSensor2ID"), 0);
+
             $this->setState();
 
             $controlInstID = IPS_GetInstanceListByModuleID("{FA667129-D2A1-FF51-BD31-8D042F9EC8E0}")[0];
