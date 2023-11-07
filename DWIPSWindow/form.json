@@ -53,7 +53,8 @@
                     "items": [
                         {
                             "type": "Label",
-                            "caption": "verriegelt:   "
+                            "caption": "verriegelt:",
+                            "width": "250px"
                         },
                         {
                             "type": "CheckBox",
@@ -92,7 +93,8 @@
                     "items": [
                         {
                             "type": "Label",
-                            "caption": "geschlossen:   "
+                            "caption": "geschlossen:",
+                            "width": "250px"
                         },
                         {
                             "type": "CheckBox",
@@ -213,37 +215,37 @@
                 {
                     "type": "SelectVariable",
                     "name": "WindowSensorLeft1ID",
-                    "caption": "Sensor 1",
+                    "caption": "Sensor links 1",
                     "validVariableTypes": [0]
                 },
                 {
                     "type": "SelectVariable",
                     "name": "WindowSensorLeft2ID",
-                    "caption": "Sensor 2",
+                    "caption": "Sensor links 2",
                     "validVariableTypes": [0]
                 },
                 {
                     "type": "SelectVariable",
                     "name": "WindowSensorLeft3ID",
-                    "caption": "Sensor 2",
+                    "caption": "Sensor links 3",
                     "validVariableTypes": [0]
                 },
                 {
                     "type": "SelectVariable",
                     "name": "WindowSensorRight1ID",
-                    "caption": "Sensor 1",
+                    "caption": "Sensor rechts 1",
                     "validVariableTypes": [0]
                 },
                 {
                     "type": "SelectVariable",
                     "name": "WindowSensorRight2ID",
-                    "caption": "Sensor 2",
+                    "caption": "Sensor rechts 2",
                     "validVariableTypes": [0]
                 },
                 {
                     "type": "SelectVariable",
                     "name": "WindowSensorRight3ID",
-                    "caption": "Sensor 2",
+                    "caption": "Sensor rechts 3",
                     "validVariableTypes": [0]
                 }
             ]
