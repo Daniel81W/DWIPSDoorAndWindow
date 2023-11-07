@@ -77,8 +77,6 @@
             /** @noinspection PhpExpressionResultUnusedInspection */
             $this->RegisterMessage($this->ReadPropertyInteger("WindowSensor2ID"),10603);
 
-            $this->SendDebug("Form Sensor 1", $this->ReadPropertyInteger("WindowSensor1ID"), 0);
-            $this->SendDebug("Form Sensor 2", $this->ReadPropertyInteger("WindowSensor2ID"), 0);
 
             $this->setState();
 
@@ -112,7 +110,7 @@
             $sens1ID = $this->ReadPropertyInteger("WindowSensor1ID");
             $sens2ID = $this->ReadPropertyInteger("WindowSensor2ID");
 
-            if ($sens1ID > 0 && $sens2ID > 0) {
+            if ($sens1ID > 1 && $sens2ID > 1) {
                 $sens1 = GetValueBoolean($sens1ID);
                 $sens2 = GetValueBoolean($sens2ID);
 
@@ -135,7 +133,7 @@
                     }
                 }
             }
-            elseif($sens1ID > 0){
+            elseif($sens1ID > 1){
                 $sens1 = GetValueBoolean($sens1ID);
                 if($sens1){
                     /** @noinspection PhpExpressionResultUnusedInspection */
