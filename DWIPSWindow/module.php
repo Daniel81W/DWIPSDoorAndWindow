@@ -132,6 +132,16 @@
                     }
                 }
             }
+            elseif($sens1ID > 0){
+                $sens1 = GetValueBoolean($sens1ID);
+                if($sens1){
+                    /** @noinspection PhpExpressionResultUnusedInspection */
+                    $this->SetValue("state", 2);
+                }else{
+                    /** @noinspection PhpExpressionResultUnusedInspection */
+                    $this->SetValue("state", 0);
+                }
+            }
 
             $controlInstID = IPS_GetInstanceListByModuleID("{FA667129-D2A1-FF51-BD31-8D042F9EC8E0}")[0];
             if(isset($controlInstID)){
