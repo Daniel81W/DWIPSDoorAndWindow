@@ -9,7 +9,8 @@
                     "caption": "Anzahl der Flügel",
                     "minimum": 1,
                     "maximum": 2,
-                    "name": "SashesCount"
+                    "name": "SashesCount",
+                    "value": 1
                 }
             ]
         },{
