@@ -49,9 +49,6 @@
             /** Create variables */
             $this->RegisterVariableInteger('state', $this->Translate('state'), 'DWIPS.'.$this->Translate('WindowState'),1);
 
-
-            /** @noinspection PhpUndefinedMethodInspection */
-            $this->IPS_SetProperty($this->InstanceID, "InstID", $this->InstanceID);
 		}
 
 		/**
@@ -74,6 +71,10 @@
 		{
 			//Never delete this line!
 			parent::ApplyChanges();
+
+            /** @noinspection PhpUndefinedMethodInspection */
+            $this->IPS_SetProperty($this->InstanceID, "InstID", $this->InstanceID);
+
             $MessageList = $this->GetMessageList();
             foreach($MessageList as $instID => $messages){
                 foreach ($messages as $message){
@@ -88,7 +89,7 @@
             $this->RegisterMessage($this->ReadPropertyInteger("WindowSensor2ID"),10603);
 
 
-            $this->setState();
+            $this->SetState();
 
             $controlInstID = IPS_GetInstanceListByModuleID("{FA667129-D2A1-FF51-BD31-8D042F9EC8E0}")[0];
             if(isset($controlInstID)){
@@ -113,11 +114,11 @@
 	
 			//IPS_LogMessage("MessageSink", "Message from SenderID ".$SenderID." with Message ".$Message."\r\n Data: ".print_r($Data, true));
 			if ($SenderID == $this->ReadPropertyInteger("WindowSensor1ID") or $SenderID == $this->ReadPropertyInteger("WindowSensor2ID")){
-                $this->setState();
+                $this->SetState();
             }
 		}
 
-        public function setState(){
+        public function SetState(){
             $sens1ID = $this->ReadPropertyInteger("WindowSensor1ID");
             $sens2ID = $this->ReadPropertyInteger("WindowSensor2ID");
 
