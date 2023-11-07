@@ -12,25 +12,62 @@
 
             /** Properties for data storage*/
             //Property with instance id
-            $this->RegisterPropertyInteger("InstanceID", 0);
+            $this->RegisterPropertyInteger("InstID", 0);
             //Property with number of window sashes
             $this->RegisterPropertyInteger("SashesCount", 0);
             //
             $this->RegisterPropertyInteger("WindowSensor1ID", 0);
             //
             $this->RegisterPropertyInteger("WindowSensor2ID", 0);
+
             //
-            $this->RegisterPropertyBoolean("ClosedStateWindowSensor1", 0);
+            $this->RegisterPropertyBoolean("LockedStateWindowSensorLeft1", 0);
             //
-            $this->RegisterPropertyBoolean("ClosedStateWindowSensor2", 0);
+            $this->RegisterPropertyBoolean("LockedStateWindowSensorLeft2", 0);
             //
-            $this->RegisterPropertyBoolean("TiltedStateWindowSensor1", 0);
+            $this->RegisterPropertyBoolean("LockedStateWindowSensorLeft3", 0);
             //
-            $this->RegisterPropertyBoolean("TiltedStateWindowSensor2", 0);
+            $this->RegisterPropertyBoolean("LockedStateWindowSensorRight1", 0);
             //
-            $this->RegisterPropertyBoolean("OpenedStateWindowSensor1", 0);
+            $this->RegisterPropertyBoolean("LockedStateWindowSensorRight2", 0);
             //
-            $this->RegisterPropertyBoolean("OpenedStateWindowSensor2", 0);
+            $this->RegisterPropertyBoolean("LockedStateWindowSensorRight3", 0);
+            //
+            $this->RegisterPropertyBoolean("ClosedStateWindowSensorLeft1", 0);
+            //
+            $this->RegisterPropertyBoolean("ClosedStateWindowSensorLeft2", 0);
+            //
+            $this->RegisterPropertyBoolean("ClosedStateWindowSensorLeft3", 0);
+            //
+            $this->RegisterPropertyBoolean("ClosedStateWindowSensorRight1", 0);
+            //
+            $this->RegisterPropertyBoolean("ClosedStateWindowSensorRight2", 0);
+            //
+            $this->RegisterPropertyBoolean("ClosedStateWindowSensorRight3", 0);
+            //
+            $this->RegisterPropertyBoolean("TiltedStateWindowSensorLeft1", 0);
+            //
+            $this->RegisterPropertyBoolean("TiltedStateWindowSensorLeft2", 0);
+            //
+            $this->RegisterPropertyBoolean("TiltedStateWindowSensorLeft3", 0);
+            //
+            $this->RegisterPropertyBoolean("TiltedStateWindowSensorRight1", 0);
+            //
+            $this->RegisterPropertyBoolean("TiltedStateWindowSensorRight2", 0);
+            //
+            $this->RegisterPropertyBoolean("TiltedStateWindowSensorRight3", 0);
+            //
+            $this->RegisterPropertyBoolean("OpenedStateWindowSensorLeft1", 0);
+            //
+            $this->RegisterPropertyBoolean("OpenedStateWindowSensorLeft2", 0);
+            //
+            $this->RegisterPropertyBoolean("OpenedStateWindowSensorLeft3", 0);
+            //
+            $this->RegisterPropertyBoolean("OpenedStateWindowSensorRight1", 0);
+            //
+            $this->RegisterPropertyBoolean("OpenedStateWindowSensorRight2", 0);
+            //
+            $this->RegisterPropertyBoolean("OpenedStateWindowSensorRight3", 0);
 
 
             /**Create or update VariableProfiles*/
@@ -72,7 +109,7 @@
 			//Never delete this line!
 			parent::ApplyChanges();
 
-            IPS_SetProperty($this->InstanceID, "InstanceID", $this->InstanceID);
+            IPS_SetProperty($this->InstanceID, "InstID", $this->InstanceID);
 
             $MessageList = $this->GetMessageList();
             foreach($MessageList as $instID => $messages){

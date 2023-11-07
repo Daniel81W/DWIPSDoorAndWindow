@@ -2,7 +2,7 @@
     "elements": [
         {
             "type": "NumberSpinner",
-            "name": "InstanceID"
+            "name": "InstID"
         },
         {
             "type": "ExpansionPanel",
@@ -22,12 +22,7 @@
                             "caption": "2",
                             "value": 2
                         }
-                    ],
-                    "onChange": [
-                        "$handlearr1 = '[{\"caption\": \"links\",\"value\": 0},{\"caption\": \"rechts\",\"value\": 1}]';",
-                        "$handlearr2 = '[{\"caption\": \"links\",\"value\": 0},{\"caption\": \"rechts\",\"value\": 1},{\"caption\": \"beidseitig\",\"value\": 2}]';",
-                        "UpdateFormField('HandleSide', 'options', $handlearr1);"
-                        ]
+                    ]
                 },
                 {
                     "type": "Select",
@@ -58,17 +53,76 @@
                     "items": [
                         {
                             "type": "Label",
+                            "caption": "verriegelt:   "
+                        },
+                        {
+                            "type": "CheckBox",
+                            "caption": "Sensor links 1",
+                            "name": "LockedStateWindowSensorLeft1"
+                        },
+                        {
+                            "type": "CheckBox",
+                            "caption": "Sensor links 2",
+                            "name": "LockedStateWindowSensorLeft2"
+                        },
+                        {
+                            "type": "CheckBox",
+                            "caption": "Sensor links 3",
+                            "name": "LockedStateWindowSensorLeft3"
+                        },
+                        {
+                            "type": "CheckBox",
+                            "caption": "Sensor rechts 1",
+                            "name": "LockedStateWindowSensorRight1"
+                        },
+                        {
+                            "type": "CheckBox",
+                            "caption": "Sensor rechts 2",
+                            "name": "LockedStateWindowSensorRight2"
+                        },
+                        {
+                            "type": "CheckBox",
+                            "caption": "Sensor rechts 3",
+                            "name": "LockedStateWindowSensorRight3"
+                        }
+                    ]
+                },
+                {
+                    "type": "RowLayout",
+                    "items": [
+                        {
+                            "type": "Label",
                             "caption": "geschlossen:   "
                         },
                         {
                             "type": "CheckBox",
-                            "caption": "Sensor 1",
-                            "name": "ClosedStateWindowSensor1"
+                            "caption": "Sensor links 1",
+                            "name": "ClosedStateWindowSensorLeft1"
                         },
                         {
                             "type": "CheckBox",
-                            "caption": "Sensor 2",
-                            "name": "ClosedStateWindowSensor2"
+                            "caption": "Sensor links 2",
+                            "name": "ClosedStateWindowSensorLeft2"
+                        },
+                        {
+                            "type": "CheckBox",
+                            "caption": "Sensor links 3",
+                            "name": "ClosedStateWindowSensorLeft3"
+                        },
+                        {
+                            "type": "CheckBox",
+                            "caption": "Sensor rechts 1",
+                            "name": "ClosedStateWindowSensorRight1"
+                        },
+                        {
+                            "type": "CheckBox",
+                            "caption": "Sensor rechts 2",
+                            "name": "ClosedStateWindowSensorRight2"
+                        },
+                        {
+                            "type": "CheckBox",
+                            "caption": "Sensor rechts 3",
+                            "name": "ClosedStateWindowSensorRight3"
                         }
                     ]
                 },
@@ -81,13 +135,33 @@
                         },
                         {
                             "type": "CheckBox",
-                            "caption": "Sensor 1",
-                            "name": "TiltedStateWindowSensor1"
+                            "caption": "Sensor links 1",
+                            "name": "TiltedStateWindowSensorLeft1"
                         },
                         {
                             "type": "CheckBox",
-                            "caption": "Sensor 2",
-                            "name": "TiltedStateWindowSensor2"
+                            "caption": "Sensor links 2",
+                            "name": "TiltedStateWindowSensorLeft2"
+                        },
+                        {
+                            "type": "CheckBox",
+                            "caption": "Sensor links 3",
+                            "name": "TiltedStateWindowSensorLeft3"
+                        },
+                        {
+                            "type": "CheckBox",
+                            "caption": "Sensor rechts 1",
+                            "name": "TiltedStateWindowSensorRight1"
+                        },
+                        {
+                            "type": "CheckBox",
+                            "caption": "Sensor rechts 2",
+                            "name": "TiltedStateWindowSensorRight2"
+                        },
+                        {
+                            "type": "CheckBox",
+                            "caption": "Sensor rechts 3",
+                            "name": "TiltedStateWindowSensorRight3"
                         }
                     ]
                 },
@@ -100,13 +174,33 @@
                         },
                         {
                             "type": "CheckBox",
-                            "caption": "Sensor 1",
-                            "name": "OpenedStateWindowSensor1"
+                            "caption": "Sensor links 1",
+                            "name": "OpenedStateWindowSensorLeft1"
                         },
                         {
                             "type": "CheckBox",
-                            "caption": "Sensor 2",
-                            "name": "OpenedStateWindowSensor2"
+                            "caption": "Sensor links 2",
+                            "name": "OpenedStateWindowSensorLeft2"
+                        },
+                        {
+                            "type": "CheckBox",
+                            "caption": "Sensor links 3",
+                            "name": "OpenedStateWindowSensorLeft3"
+                        },
+                        {
+                            "type": "CheckBox",
+                            "caption": "Sensor rechts 1",
+                            "name": "OpenedStateWindowSensorRight1"
+                        },
+                        {
+                            "type": "CheckBox",
+                            "caption": "Sensor rechts 2",
+                            "name": "OpenedStateWindowSensorRight2"
+                        },
+                        {
+                            "type": "CheckBox",
+                            "caption": "Sensor rechts 3",
+                            "name": "OpenedStateWindowSensorRight3"
                         }
                     ]
                 }
@@ -118,13 +212,37 @@
             "items": [
                 {
                     "type": "SelectVariable",
-                    "name": "WindowSensor1ID",
+                    "name": "WindowSensorLeft1ID",
                     "caption": "Sensor 1",
                     "validVariableTypes": [0]
                 },
                 {
                     "type": "SelectVariable",
-                    "name": "WindowSensor2ID",
+                    "name": "WindowSensorLeft2ID",
+                    "caption": "Sensor 2",
+                    "validVariableTypes": [0]
+                },
+                {
+                    "type": "SelectVariable",
+                    "name": "WindowSensorLeft3ID",
+                    "caption": "Sensor 2",
+                    "validVariableTypes": [0]
+                },
+                {
+                    "type": "SelectVariable",
+                    "name": "WindowSensorRight1ID",
+                    "caption": "Sensor 1",
+                    "validVariableTypes": [0]
+                },
+                {
+                    "type": "SelectVariable",
+                    "name": "WindowSensorRight2ID",
+                    "caption": "Sensor 2",
+                    "validVariableTypes": [0]
+                },
+                {
+                    "type": "SelectVariable",
+                    "name": "WindowSensorRight3ID",
                     "caption": "Sensor 2",
                     "validVariableTypes": [0]
                 }
