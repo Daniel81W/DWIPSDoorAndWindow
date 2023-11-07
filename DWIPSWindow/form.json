@@ -19,7 +19,7 @@
                             "value": 2
                         }
                     ],
-                    "onChange": "Echo \"Test\""
+                    "onChange": "Echo 'Test';"
                 },
                 {
                     "type": "Select",
