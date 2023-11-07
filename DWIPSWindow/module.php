@@ -12,7 +12,7 @@
 
             /** Properties for data storage*/
             //Property with instance id
-            $this->RegisterPropertyInteger("InstID", 0);
+            $this->RegisterPropertyInteger("InstanceID", 0);
             //Property with number of window sashes
             $this->RegisterPropertyInteger("SashesCount", 0);
             //
@@ -72,8 +72,7 @@
 			//Never delete this line!
 			parent::ApplyChanges();
 
-            /** @noinspection PhpUndefinedMethodInspection */
-            IPS_SetProperty($this->InstanceID, "InstID", $this->InstanceID);
+            IPS_SetProperty($this->InstanceID, "InstanceID", $this->InstanceID);
 
             $MessageList = $this->GetMessageList();
             foreach($MessageList as $instID => $messages){
