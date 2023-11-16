@@ -137,7 +137,9 @@
 
         public function GetConfigurationForm():string{
             $retStr = "{";
-            $retStr .= "\"elements\": [],";
+            $retStr .= "\"elements\": [";
+            $retStr .= "{\"type\": \"ExpansionPanel\",\"caption\": \"Fenstereigenschaften\",\"expanded\": true, \"items\": []}";
+            $retStr .= "],";
             $retStr .= "\"actions\": [],";
             $retStr .= "\"status\": []";
             $retStr .= "}";
