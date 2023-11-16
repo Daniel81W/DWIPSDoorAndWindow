@@ -134,6 +134,16 @@
             }
 		}
 
+
+        public function GetConfigurationForm():string{
+            $retStr = "{";
+            $retStr .= "\"elements\": [],";
+            $retStr .= "\"actions\": [],";
+            $retStr .= "\"status\": []";
+            $retStr .= "}";
+            return $retStr;
+        }
+
 		/**
         * Die folgenden Funktionen stehen automatisch zur Verfügung, wenn das Modul über die "Module Control" eingefügt wurden.
         * Die Funktionen werden, mit dem selbst eingerichteten Prefix, in PHP und JSON-RPC wie folgt zur Verfügung gestellt:
