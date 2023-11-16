@@ -140,6 +140,9 @@
             $retStr .= "\"elements\": [";
             $retStr .= "{\"type\": \"ExpansionPanel\",\"caption\": \"Fenstereigenschaften\",\"expanded\": true, \"items\": [";
             $retStr .= "{\"type\": \"Select\", \"caption\": \"Anzahl der Flügel\", \"name\": \"SashesCount\", \"options\": [ { \"caption\": \"1\", \"value\": 1 },{ \"caption\": \"2\", \"value\": 2 }]}";
+            if($this->ReadPropertyInteger("SashesCount") == 2){
+                $retStr .= ",{\"type\": \"CheckBox\",\"caption\":\"Flügel unabhängig zu öffnen?\"}";
+            }
             $retStr .= "]}";
             $retStr .= "],";
             $retStr .= "\"actions\": [],";
