@@ -138,7 +138,9 @@
         public function GetConfigurationForm():string{
             $retStr = "{";
             $retStr .= "\"elements\": [";
-            $retStr .= "{\"type\": \"ExpansionPanel\",\"caption\": \"Fenstereigenschaften\",\"expanded\": true, \"items\": []}";
+            $retStr .= "{\"type\": \"ExpansionPanel\",\"caption\": \"Fenstereigenschaften\",\"expanded\": true, \"items\": [";
+            $retStr .= "{\"type\": \"Select\", \"caption\": \"Anzahl der Flügel\", \"name\": \"SashesCount\", \"options\": [ { \"caption\": \"1\", \"value\": 1 },{ \"caption\": \"2\", \"value\": 2 }]}";
+            $retStr .= "]}";
             $retStr .= "],";
             $retStr .= "\"actions\": [],";
             $retStr .= "\"status\": []";
