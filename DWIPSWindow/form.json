@@ -1,10 +1,6 @@
 {
     "elements": [
         {
-            "type": "NumberSpinner",
-            "name": "InstID"
-        },
-        {
             "type": "ExpansionPanel",
             "caption": "Fenstereigenschaften",
             "expanded": true,
