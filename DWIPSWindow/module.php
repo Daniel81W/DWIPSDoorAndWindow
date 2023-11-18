@@ -131,11 +131,36 @@
                 }
             }
 
-            /** @noinspection PhpExpressionResultUnusedInspection */
-			$this->RegisterMessage($this->ReadPropertyInteger("WindowSensor1ID"),10603);
-            /** @noinspection PhpExpressionResultUnusedInspection */
-            $this->RegisterMessage($this->ReadPropertyInteger("WindowSensor2ID"),10603);
-
+            $wsllID =$this->ReadPropertyInteger("WindowSensorLeftLockedID");
+            if($wsllID > 1) {
+                /** @noinspection PhpExpressionResultUnusedInspection */
+                $this->RegisterMessage($wsllID, 10603);
+            }
+            $wsloID =$this->ReadPropertyInteger("WindowSensorLeftOpenedID");
+            if($wsloID > 1) {
+                /** @noinspection PhpExpressionResultUnusedInspection */
+                $this->RegisterMessage($wsloID, 10603);
+            }
+            $wsltID =$this->ReadPropertyInteger("WindowSensorLeftTiltedID");
+            if($wsltID > 1) {
+                /** @noinspection PhpExpressionResultUnusedInspection */
+                $this->RegisterMessage($wsltID, 10603);
+            }
+            $wsrlID =$this->ReadPropertyInteger("WindowSensorRightLockedID");
+            if($wsrlID > 1) {
+                /** @noinspection PhpExpressionResultUnusedInspection */
+                $this->RegisterMessage($wsrlID, 10603);
+            }
+            $wsroID =$this->ReadPropertyInteger("WindowSensorRightOpenedID");
+            if($wsroID > 1) {
+                /** @noinspection PhpExpressionResultUnusedInspection */
+                $this->RegisterMessage($wsroID, 10603);
+            }
+            $wsrtID =$this->ReadPropertyInteger("WindowSensorRightTiltedID");
+            if($wsrtID > 1) {
+                /** @noinspection PhpExpressionResultUnusedInspection */
+                $this->RegisterMessage($wsrtID, 10603);
+            }
 
             $this->SetState();
 
