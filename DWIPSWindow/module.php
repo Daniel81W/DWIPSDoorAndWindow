@@ -151,6 +151,9 @@
                 $retStr .= ",{\"type\": \"Select\",\"caption\":\"Griffflügel\",\"name\":\"HandleSash\", \"options\": [ { \"caption\": \"rechts\", \"value\": 1 },{ \"caption\": \"links\", \"value\": 2 }]}";
             }
             $retStr .= "]}";
+            $retStr .= ",{\"type\": \"ExpansionPanel\",\"caption\": \"Fenstersensoren\",\"expanded\": false, \"items\": [";
+
+            $retStr .= "]}";
             $retStr .= "],";
             $retStr .= "\"actions\": [],";
             $retStr .= "\"status\": []";
