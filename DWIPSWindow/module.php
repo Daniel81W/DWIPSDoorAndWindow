@@ -186,27 +186,59 @@
             $wsroID = $this->ReadPropertyInteger("WindowSensorRightOpenedID");
             $wsrtID = $this->ReadPropertyInteger("WindowSensorRightTiltedID");
 
-            if($sashCount == 1){
+
                 $lock1 =0;
                 $open1 = 0;
                 $tilt1 = 0;
+                $lock2 =0;
+                $open2 = 0;
+                $tilt2 = 0;
                 if($wsllID > 1) {
                     $lock1 = GetValueBoolean($wsllID);
-                }
-                if($wsloID > 1) {
-                    $open1 = GetValueBoolean($wsloID);
                 }
                 if($wsltID > 1) {
                     $tilt1 = GetValueBoolean($wsltID);
                 }
-                $val = (int)$lock1 * 1+ (int) $open1 * 2 + (int) $tilt1 * 4;
+                if($wsloID > 1) {
+                    $open1 = GetValueBoolean($wsloID);
+                }
+                if($wsrlID > 1) {
+                    $lock2 = GetValueBoolean($wsrlID);
+                }
+                if($wsrtID > 1) {
+                    $tilt2 = GetValueBoolean($wsrtID);
+                }
+                if($wsroID > 1) {
+                    $open2 = GetValueBoolean($wsroID);
+                }
+
+                $valleft = 0;
+                $valleft += (int)$lock1 * 1;
+                if($open1){
+                    if($tilt1){
+                        $valleft += 4;
+                    }else{
+                        $valleft += 2;
+                    }
+                }
+
+                $valright = 0;
+                $valright += (int)$lock2 * 8;
+                if($open2){
+                    if($tilt2){
+                        $valright += 32;
+                    }else{
+                        $valright += 16;
+                    }
+                }
+
+                $val = $valleft + $valright;
+                //$val = (int)$lock1 * 1 + (int) $tilt1 * 2 + (int) $open1 * 4 + (int)$lock2 * 8 + (int) $tilt2 * 16 + (int) $open2 * 32;
 
 
                 /** @noinspection PhpExpressionResultUnusedInspection */
                 $this->SetValue("state", $val);
-            }elseif ($sashCount == 2){
 
-            }
 
 
 
