@@ -22,7 +22,7 @@
 
             $this->RegisterPropertyBoolean("SashesIndependent", 0);
             //
-            $this->RegisterPropertyInteger("HandleSash", 0);
+            $this->RegisterPropertyInteger("HandleSash", 1);
 
             //
             $this->RegisterPropertyBoolean("LockedStateWindowSensorLeft1", 0);
