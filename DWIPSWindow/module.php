@@ -39,7 +39,7 @@
                 IPS_CreateVariableProfile('DWIPS.' . $this->Translate('WindowState'), 1);
             }
             else{
-                IPS_SetVariableProfileValues('DWIPS.' . $this->Translate('WindowState'), 0, 3, 1);
+                IPS_SetVariableProfileValues('DWIPS.' . $this->Translate('WindowState'), 0, 63, 1);
                 IPS_SetVariableProfileAssociation('DWIPS.' . $this->Translate("WindowState"), 0, $this->Translate("locked"), "", -1);
                 IPS_SetVariableProfileAssociation('DWIPS.' . $this->Translate("WindowState"), 1, $this->Translate("unlocked") . ", " . $this->Translate("closed"), "", -1);
                 IPS_SetVariableProfileAssociation('DWIPS.' . $this->Translate("WindowState"), 2, $this->Translate("tilted"), "", -1);
@@ -142,8 +142,10 @@
             if($this->ReadPropertyBoolean("SashesIndependent") or $this->ReadPropertyInteger("HandleSash") ==2){
                 $retStr .= ",{\"type\": \"SelectVariable\",\"name\": \"WindowSensorLeftTiltedID\",\"caption\": \"Sensor links Kippung\",\"validVariableTypes\": [0]}";
             }
-            $retStr .= ",{\"type\": \"SelectVariable\",\"name\": \"WindowSensorRightLockedID\",\"caption\": \"Sensor rechts Verriegelung\",\"validVariableTypes\": [0]}";
-            $retStr .= ",{\"type\": \"SelectVariable\",\"name\": \"WindowSensorRightOpenedID\",\"caption\": \"Sensor rechts Öffnung\",\"validVariableTypes\": [0]}";
+            if($this->ReadPropertyInteger("SashesCount") > 1) {
+                $retStr .= ",{\"type\": \"SelectVariable\",\"name\": \"WindowSensorRightLockedID\",\"caption\": \"Sensor rechts Verriegelung\",\"validVariableTypes\": [0]}";
+                $retStr .= ",{\"type\": \"SelectVariable\",\"name\": \"WindowSensorRightOpenedID\",\"caption\": \"Sensor rechts Öffnung\",\"validVariableTypes\": [0]}";
+            }
             if($this->ReadPropertyBoolean("SashesIndependent") or $this->ReadPropertyInteger("HandleSash") ==1){
                 $retStr .= ",{\"type\": \"SelectVariable\",\"name\": \"WindowSensorRightTiltedID\",\"caption\": \"Sensor rechts Kippung\",\"validVariableTypes\": [0]}";
             }
@@ -176,20 +178,37 @@
 		}
 
         public function SetState(){
+            $sashCount = $this->ReadPropertyInteger("SashesCount");
             $wsllID = $this->ReadPropertyInteger("WindowSensorLeftLockedID");
+            $wsloID = $this->ReadPropertyInteger("WindowSensorLeftOpenedID");
+            $wsltID = $this->ReadPropertyInteger("WindowSensorLeftTiltedID");
             $wsrlID = $this->ReadPropertyInteger("WindowSensorRightLockedID");
+            $wsroID = $this->ReadPropertyInteger("WindowSensorRightOpenedID");
+            $wsrtID = $this->ReadPropertyInteger("WindowSensorRightTiltedID");
 
-            if ($wsllID > 1 && $wsrlID > 1) {
-                $sens1 = GetValueBoolean($wsllID);
-                $sens2 = GetValueBoolean($wsrlID);
-
-                if ($sens1 == false) {
-                    if ($sens2 == false) {
-                        /** @noinspection PhpExpressionResultUnusedInspection */
-                        $this->SetValue("state", 0);
-                    }
+            if($sashCount == 1){
+                $lock1 =0;
+                $open1 = 0;
+                $tilt1 = 0;
+                if($wsllID > 1) {
+                    $lock1 = GetValueBoolean($wsllID);
                 }
+                if($wsloID > 1) {
+                    $open1 = GetValueBoolean($wsloID);
+                }
+                if($wsltID > 1) {
+                    $tilt1 = GetValueBoolean($wsltID);
+                }
+                $val = (int)$lock1 * 1+ (int) $open1 * 2 + (int) $tilt1 * 4;
+
+
+                /** @noinspection PhpExpressionResultUnusedInspection */
+                $this->SetValue("state", $val);
+            }elseif ($sashCount == 2){
+
             }
+
+
 
             $controlInstID = IPS_GetInstanceListByModuleID("{FA667129-D2A1-FF51-BD31-8D042F9EC8E0}")[0];
             if(isset($controlInstID)){
