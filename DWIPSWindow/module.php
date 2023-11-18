@@ -21,6 +21,8 @@
             $this->RegisterPropertyInteger("WindowSensor2ID", 0);
 
             $this->RegisterPropertyBoolean("SashesIndependent", 0);
+            //
+            $this->RegisterPropertyInteger("HandleSash", 0);
 
             //
             $this->RegisterPropertyBoolean("LockedStateWindowSensorLeft1", 0);
@@ -144,6 +146,9 @@
             $retStr .= "{\"type\": \"Select\", \"caption\": \"Anzahl der Flügel\", \"name\": \"SashesCount\", \"options\": [ { \"caption\": \"1\", \"value\": 1 },{ \"caption\": \"2\", \"value\": 2 }]}";
             if($this->ReadPropertyInteger("SashesCount") == 2){
                 $retStr .= ",{\"type\": \"CheckBox\",\"caption\":\"Flügel unabhängig zu öffnen?\",\"name\":\"SashesIndependent\"}";
+            }
+            if($this->ReadPropertyInteger("SashesCount") >= 2 && !$this->ReadPropertyBoolean("SashesIndependent")){
+                $retStr .= ",{\"type\": \"Select\",\"caption\":\"Griffflügel\",\"name\":\"HandleSash\", \"options\": [ { \"caption\": \"rechts\", \"value\": 1 },{ \"caption\": \"links\", \"value\": 2 }]}";
             }
             $retStr .= "]}";
             $retStr .= "],";
