@@ -16,6 +16,10 @@
             //Property with number of window sashes
             $this->RegisterPropertyInteger("SashesCount", 0);
             //
+            $this->RegisterPropertyInteger("WindowSensorLeftLockedID", 0);
+            //
+            $this->RegisterPropertyInteger("WindowSensorRightLockedID", 0);
+            //
             $this->RegisterPropertyInteger("WindowSensor1ID", 0);
             //
             $this->RegisterPropertyInteger("WindowSensor2ID", 0);
@@ -152,7 +156,8 @@
             }
             $retStr .= "]}";
             $retStr .= ",{\"type\": \"ExpansionPanel\",\"caption\": \"Fenstersensoren\",\"expanded\": false, \"items\": [";
-
+            $retStr .= "{\"type\": \"SelectVariable\",\"name\": \"WindowSensorLeftLockedID\",\"caption\": \"Sensor links Verriegelung\",\"validVariableTypes\": [0]}";
+            $retStr .= ",{\"type\": \"SelectVariable\",\"name\": \"WindowSensorRightLockedID\",\"caption\": \"Sensor links Verriegelung\",\"validVariableTypes\": [0]}";
             $retStr .= "]}";
             $retStr .= "],";
             $retStr .= "\"actions\": [],";
