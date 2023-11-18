@@ -20,10 +20,14 @@
             //
             $this->RegisterPropertyInteger("WindowSensorRightLockedID", 0);
             //
-            $this->RegisterPropertyInteger("WindowSensor1ID", 0);
+            $this->RegisterPropertyInteger("WindowSensorLeftOpenedID", 0);
             //
-            $this->RegisterPropertyInteger("WindowSensor2ID", 0);
-
+            $this->RegisterPropertyInteger("WindowSensorRightOpenedID", 0);
+            //
+            $this->RegisterPropertyInteger("WindowSensorLeftTiltedID", 0);
+            //
+            $this->RegisterPropertyInteger("WindowSensorRightTiltedID", 0);
+            //
             $this->RegisterPropertyBoolean("SashesIndependent", 0);
             //
             $this->RegisterPropertyInteger("HandleSash", 1);
@@ -157,7 +161,11 @@
             $retStr .= "]}";
             $retStr .= ",{\"type\": \"ExpansionPanel\",\"caption\": \"Fenstersensoren\",\"expanded\": false, \"items\": [";
             $retStr .= "{\"type\": \"SelectVariable\",\"name\": \"WindowSensorLeftLockedID\",\"caption\": \"Sensor links Verriegelung\",\"validVariableTypes\": [0]}";
-            $retStr .= ",{\"type\": \"SelectVariable\",\"name\": \"WindowSensorRightLockedID\",\"caption\": \"Sensor links Verriegelung\",\"validVariableTypes\": [0]}";
+            $retStr .= ",{\"type\": \"SelectVariable\",\"name\": \"WindowSensorLeftOpenedID\",\"caption\": \"Sensor links Öffnung\",\"validVariableTypes\": [0]}";
+            $retStr .= ",{\"type\": \"SelectVariable\",\"name\": \"WindowSensorLeftTiltedID\",\"caption\": \"Sensor links Kippung\",\"validVariableTypes\": [0]}";
+            $retStr .= ",{\"type\": \"SelectVariable\",\"name\": \"WindowSensorRightLockedID\",\"caption\": \"Sensor rechts Verriegelung\",\"validVariableTypes\": [0]}";
+            $retStr .= ",{\"type\": \"SelectVariable\",\"name\": \"WindowSensorRightOpenedID\",\"caption\": \"Sensor rechts Öffnung\",\"validVariableTypes\": [0]}";
+            $retStr .= ",{\"type\": \"SelectVariable\",\"name\": \"WindowSensorRightTiltedID\",\"caption\": \"Sensor rechts Kippung\",\"validVariableTypes\": [0]}";
             $retStr .= "]}";
             $retStr .= "],";
             $retStr .= "\"actions\": [],";
