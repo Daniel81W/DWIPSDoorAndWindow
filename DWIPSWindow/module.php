@@ -32,54 +32,6 @@
             //
             $this->RegisterPropertyInteger("HandleSash", 1);
 
-            //
-            $this->RegisterPropertyBoolean("LockedStateWindowSensorLeft1", 0);
-            //
-            $this->RegisterPropertyBoolean("LockedStateWindowSensorLeft2", 0);
-            //
-            $this->RegisterPropertyBoolean("LockedStateWindowSensorLeft3", 0);
-            //
-            $this->RegisterPropertyBoolean("LockedStateWindowSensorRight1", 0);
-            //
-            $this->RegisterPropertyBoolean("LockedStateWindowSensorRight2", 0);
-            //
-            $this->RegisterPropertyBoolean("LockedStateWindowSensorRight3", 0);
-            //
-            $this->RegisterPropertyBoolean("ClosedStateWindowSensorLeft1", 0);
-            //
-            $this->RegisterPropertyBoolean("ClosedStateWindowSensorLeft2", 0);
-            //
-            $this->RegisterPropertyBoolean("ClosedStateWindowSensorLeft3", 0);
-            //
-            $this->RegisterPropertyBoolean("ClosedStateWindowSensorRight1", 0);
-            //
-            $this->RegisterPropertyBoolean("ClosedStateWindowSensorRight2", 0);
-            //
-            $this->RegisterPropertyBoolean("ClosedStateWindowSensorRight3", 0);
-            //
-            $this->RegisterPropertyBoolean("TiltedStateWindowSensorLeft1", 0);
-            //
-            $this->RegisterPropertyBoolean("TiltedStateWindowSensorLeft2", 0);
-            //
-            $this->RegisterPropertyBoolean("TiltedStateWindowSensorLeft3", 0);
-            //
-            $this->RegisterPropertyBoolean("TiltedStateWindowSensorRight1", 0);
-            //
-            $this->RegisterPropertyBoolean("TiltedStateWindowSensorRight2", 0);
-            //
-            $this->RegisterPropertyBoolean("TiltedStateWindowSensorRight3", 0);
-            //
-            $this->RegisterPropertyBoolean("OpenedStateWindowSensorLeft1", 0);
-            //
-            $this->RegisterPropertyBoolean("OpenedStateWindowSensorLeft2", 0);
-            //
-            $this->RegisterPropertyBoolean("OpenedStateWindowSensorLeft3", 0);
-            //
-            $this->RegisterPropertyBoolean("OpenedStateWindowSensorRight1", 0);
-            //
-            $this->RegisterPropertyBoolean("OpenedStateWindowSensorRight2", 0);
-            //
-            $this->RegisterPropertyBoolean("OpenedStateWindowSensorRight3", 0);
 
 
             /**Create or update VariableProfiles*/
@@ -218,46 +170,24 @@
 		public function MessageSink($TimeStamp, $SenderID, $Message, $Data) {
 	
 			//IPS_LogMessage("MessageSink", "Message from SenderID ".$SenderID." with Message ".$Message."\r\n Data: ".print_r($Data, true));
-			if ($SenderID == $this->ReadPropertyInteger("WindowSensor1ID") or $SenderID == $this->ReadPropertyInteger("WindowSensor2ID")){
+			if ($SenderID == $this->ReadPropertyInteger("WindowSensorLeftLockedID") or $SenderID == $this->ReadPropertyInteger("WindowSensorRightLockedID")){
                 $this->SetState();
             }
 		}
 
         public function SetState(){
-            $sens1ID = $this->ReadPropertyInteger("WindowSensor1ID");
-            $sens2ID = $this->ReadPropertyInteger("WindowSensor2ID");
+            $wsllID = $this->ReadPropertyInteger("WindowSensorLeftLockedID");
+            $wsrlID = $this->ReadPropertyInteger("WindowSensorRightLockedID");
 
-            if ($sens1ID > 1 && $sens2ID > 1) {
-                $sens1 = GetValueBoolean($sens1ID);
-                $sens2 = GetValueBoolean($sens2ID);
+            if ($wsllID > 1 && $wsrlID > 1) {
+                $sens1 = GetValueBoolean($wsllID);
+                $sens2 = GetValueBoolean($wsrlID);
 
-                if ($sens1 == $this->ReadPropertyBoolean("ClosedStateWindowSensor1")) {
-                    if ($sens2 == $this->ReadPropertyBoolean("ClosedStateWindowSensor2")) {
+                if ($sens1 == false) {
+                    if ($sens2 == false) {
                         /** @noinspection PhpExpressionResultUnusedInspection */
                         $this->SetValue("state", 0);
                     }
-                }
-                if ($sens1 == $this->ReadPropertyBoolean("TiltedStateWindowSensor1")) {
-                    if ($sens2 == $this->ReadPropertyBoolean("TiltedStateWindowSensor2")) {
-                        /** @noinspection PhpExpressionResultUnusedInspection */
-                        $this->SetValue("state", 1);
-                    }
-                }
-                if ($sens1 == $this->ReadPropertyBoolean("OpenedStateWindowSensor1")) {
-                    if ($sens2 == $this->ReadPropertyBoolean("OpenedStateWindowSensor2")) {
-                        /** @noinspection PhpExpressionResultUnusedInspection */
-                        $this->SetValue("state", 2);
-                    }
-                }
-            }
-            elseif($sens1ID > 1){
-                $sens1 = GetValueBoolean($sens1ID);
-                if($sens1){
-                    /** @noinspection PhpExpressionResultUnusedInspection */
-                    $this->SetValue("state", 2);
-                }else{
-                    /** @noinspection PhpExpressionResultUnusedInspection */
-                    $this->SetValue("state", 0);
                 }
             }
 
