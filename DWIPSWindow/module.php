@@ -35,15 +35,26 @@
 
 
             /**Create or update VariableProfiles*/
-            if (!IPS_VariableProfileExists('DWIPS.' . $this->Translate('WindowState'))) {
-                IPS_CreateVariableProfile('DWIPS.' . $this->Translate('WindowState'), 1);
+            if (!IPS_VariableProfileExists('DWIPS.' . $this->Translate('WindowState_twin'))) {
+                IPS_CreateVariableProfile('DWIPS.' . $this->Translate('WindowState_twin'), 1);
             }
             else{
-                IPS_SetVariableProfileValues('DWIPS.' . $this->Translate('WindowState'), 0, 63, 1);
-                IPS_SetVariableProfileAssociation('DWIPS.' . $this->Translate("WindowState"), 0, $this->Translate("locked"), "", -1);
-                IPS_SetVariableProfileAssociation('DWIPS.' . $this->Translate("WindowState"), 1, $this->Translate("unlocked") . ", " . $this->Translate("closed"), "", -1);
-                IPS_SetVariableProfileAssociation('DWIPS.' . $this->Translate("WindowState"), 2, $this->Translate("tilted"), "", -1);
-                IPS_SetVariableProfileAssociation('DWIPS.' . $this->Translate("WindowState"), 3, $this->Translate("opened"), "", -1);
+                IPS_SetVariableProfileValues('DWIPS.' . $this->Translate('WindowState_twin'), 0, 63, 1);
+                IPS_SetVariableProfileAssociation('DWIPS.' . $this->Translate("WindowState_twin"), 0, $this->Translate("locked"), "", -1);
+                IPS_SetVariableProfileAssociation('DWIPS.' . $this->Translate("WindowState_twin"), 1, $this->Translate("unlocked") . ", " . $this->Translate("closed"), "", -1);
+                IPS_SetVariableProfileAssociation('DWIPS.' . $this->Translate("WindowState_twin"), 2, $this->Translate("tilted"), "", -1);
+                IPS_SetVariableProfileAssociation('DWIPS.' . $this->Translate("WindowState_twin"), 3, $this->Translate("opened"), "", -1);
+            }
+
+            if (!IPS_VariableProfileExists('DWIPS.' . $this->Translate('WindowState_single'))) {
+                IPS_CreateVariableProfile('DWIPS.' . $this->Translate('WindowState_single'), 1);
+            }
+            else{
+                IPS_SetVariableProfileValues('DWIPS.' . $this->Translate('WindowState_single'), 0, 7, 1);
+                IPS_SetVariableProfileAssociation('DWIPS.' . $this->Translate("WindowState_single"), 0, $this->Translate("locked"), "", -1);
+                IPS_SetVariableProfileAssociation('DWIPS.' . $this->Translate("WindowState_single"), 1, $this->Translate("unlocked") . ", " . $this->Translate("closed"), "", -1);
+                IPS_SetVariableProfileAssociation('DWIPS.' . $this->Translate("WindowState_single"), 2, $this->Translate("tilted"), "", -1);
+                IPS_SetVariableProfileAssociation('DWIPS.' . $this->Translate("WindowState_single"), 3, $this->Translate("opened"), "", -1);
             }
 
 
@@ -73,7 +84,12 @@
 			//Never delete this line!
 			parent::ApplyChanges();
 
-            IPS_SetProperty($this->InstanceID, "InstID", $this->InstanceID);
+            if($this->ReadPropertyBoolean("SashesCount") == 1){
+                IPS_SetVariableCustomProfile($this->GetIDForIdent("state"), 'DWIPS.' . $this->Translate("WindowState_single"));
+            }elseif($this->ReadPropertyBoolean("SashesCount") == 2){
+                IPS_SetVariableCustomProfile($this->GetIDForIdent("state"), 'DWIPS.' . $this->Translate("WindowState_twin"));
+            }
+
 
             $MessageList = $this->GetMessageList();
             foreach($MessageList as $instID => $messages){
