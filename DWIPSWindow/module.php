@@ -59,7 +59,7 @@
 
 
             /** Create variables */
-            $this->RegisterVariableInteger('state', $this->Translate('state'), 'DWIPS.'.$this->Translate('WindowState'),1);
+            $this->RegisterVariableInteger('state', $this->Translate('state'), 'DWIPS.'.$this->Translate('WindowState_single'),1);
 
 		}
 
