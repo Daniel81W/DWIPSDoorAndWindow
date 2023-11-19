@@ -2,8 +2,8 @@
     "translations": {
         "de": {
             "WindowState": "Fensterstatus",
-            "WindowState_single": "Fensterstatus_einflügelig",
-            "WindowState_twin": "Fensterstatus_zweiflügelig",
+            "WindowState_single": "Fensterstatus_einfluegelig",
+            "WindowState_twin": "Fensterstatus_zweifluegelig",
             "locked": "verriegelt",
             "unlocked": "entriegelt",
             "closed": "geschlossen",
