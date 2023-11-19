@@ -36,6 +36,8 @@
 
             /**Create or update VariableProfiles*/
             if (!IPS_VariableProfileExists('DWIPS.' . $this->Translate('WindowState_twin'))) {
+                $this->SendDebug("init", $this->Translate('WindowState_twin'), 0);
+                IPS_LogMessage("DWIPSWindow", $this->Translate('WindowState_twin'));
                 IPS_CreateVariableProfile('DWIPS.' . $this->Translate('WindowState_twin'), 1);
             }
             else{
@@ -141,6 +143,7 @@
 
 
         public function GetConfigurationForm():string{
+            /*
             $retStr = "{";
             $retStr .= "\"elements\": [";
             $retStr .= "{\"type\": \"ExpansionPanel\",\"caption\": \"Fenstereigenschaften\",\"expanded\": true, \"items\": [";
@@ -171,6 +174,8 @@
             $retStr .= "\"status\": []";
             $retStr .= "}";
             return $retStr;
+        */
+        return "";
         }
 
 		/**
