@@ -211,6 +211,7 @@
                 $tilt2 = false;
                 if($wsllID > 1) {
                     $lock1 = GetValueBoolean($wsllID);
+                    $this->SendDebug("SetState", $lock1,0);
                 }
                 if($wsltID > 1) {
                     $tilt1 = GetValueBoolean($wsltID);
