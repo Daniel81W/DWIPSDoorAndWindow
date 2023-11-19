@@ -202,6 +202,7 @@
             $wsroID = $this->ReadPropertyInteger("WindowSensorRightOpenedID");
             $wsrtID = $this->ReadPropertyInteger("WindowSensorRightTiltedID");
 
+            $this->SendDebug("SetState", $wsllID,0);
 
                 $lock1 = false;
                 $open1 = false;
