@@ -189,9 +189,8 @@
 		public function MessageSink($TimeStamp, $SenderID, $Message, $Data) {
 	
 			//IPS_LogMessage("MessageSink", "Message from SenderID ".$SenderID." with Message ".$Message."\r\n Data: ".print_r($Data, true));
-			if ($SenderID == $this->ReadPropertyInteger("WindowSensorLeftLockedID") or $SenderID == $this->ReadPropertyInteger("WindowSensorRightLockedID")){
-                $this->SetState();
-            }
+			    $this->SetState();
+
 		}
 
         public function SetState(){
@@ -204,12 +203,12 @@
             $wsrtID = $this->ReadPropertyInteger("WindowSensorRightTiltedID");
 
 
-                $lock1 =0;
-                $open1 = 0;
-                $tilt1 = 0;
-                $lock2 =0;
-                $open2 = 0;
-                $tilt2 = 0;
+                $lock1 = false;
+                $open1 = false;
+                $tilt1 = false;
+                $lock2 = false;
+                $open2 = false;
+                $tilt2 = false;
                 if($wsllID > 1) {
                     $lock1 = GetValueBoolean($wsllID);
                 }
